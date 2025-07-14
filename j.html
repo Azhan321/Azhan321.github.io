@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Tabs - Fixed</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #000;
+      color: white;
+      padding: 50px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .resume-tabs {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      color: gray;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      color: #ff4500;
+    }
+
+    .resume-tabs span {
+      color: gray;
+      margin: 0 10px;
+    }
+
+    .tab-panel {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .tab-panel.active {
+      display: flex;
+    }
+
+    .resume-box {
+      background: #2a2a2a;
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+    }
+
+    .resume-box h3 {
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .resume-box .year {
+      background: #ff4500;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      margin-left: 10px;
+    }
+
+    .resume-box .company {
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .resume-box .desc {
+      color: #ddd;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .tab-panel {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .resume-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="section-title">My Resume</h2>
+
+    <div class="resume-tabs">
+      <button class="tab-btn active" onclick="switchTab(this, 'experience')">EXPERIENCE</button>
+      <span>|</span>
+      <button class="tab-btn" onclick="switchTab(this, 'education')">EDUCATION</button>
+    </div>
+
+    <div class="tab-panel experience active">
+      <div class="resume-box">
+        <h3>MERN Stack <span class="year">2025 - NOW</span></h3>
+        <p class="company">Micro IT</p>
+        <p class="desc">Working as MERN developer building scalable apps.</p>
+      </div>
+      <div class="resume-box">
+        <h3>JS / PHP <span class="year">2024 - 2025</span></h3>
+        <p class="company">Two Lions</p>
+        <p class="desc">Backend & frontend scripting and database integration.</p>
+      </div>
+      <div class="resume-box">
+        <h3>Web Designer <span class="year">2023 - 2024</span></h3>
+        <p class="company">Desired Hub</p>
+        <p class="desc">Designed beautiful layouts and UI/UX interfaces.</p>
+      </div>
+    </div>
+
+    <div class="tab-panel education">
+      <div class="resume-box">
+        <h3>BS IT <span class="year">2022 - 2026</span></h3>
+        <p class="company">University of Sahiwal</p>
+        <p class="desc">Courses: OOP, DSA, DBMS, MERN Stack, Software Eng.</p>
+      </div>
+      <div class="resume-box">
+        <h3>FSc Pre-Engineering <span class="year">2020 - 2022</span></h3>
+        <p class="company">Punjab College</p>
+        <p class="desc">Maths, Physics, Computer Science.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(clickedBtn, tabName) {
+      const buttons = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.tab-panel');
+
+      // Reset buttons and panels
+      buttons.forEach(btn => btn.classList.remove('active'));
+      panels.forEach(panel => panel.classList.remove('active'));
+
+      // Activate clicked tab and panel
+      clickedBtn.classList.add('active');
+      document.querySelector('.tab-panel.' + tabName).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
