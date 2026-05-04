@@ -20,4 +20,16 @@
   document.addEventListener("DOMContentLoaded", () => {
     switchTab("experience");
   });
-   
+//    function showTab(tabName) {
+//   const exp = document.getElementById("experience");
+//   const edu = document.getElementById("education");
+
+//   if (tabName === "experience") {
+//     exp.style.display = "flex";
+//     edu.style.display = "none";
+//   } else {
+//     exp.style.display = "none";
+//     edu.style.display = "flex";
+//   }
+  
+// }
